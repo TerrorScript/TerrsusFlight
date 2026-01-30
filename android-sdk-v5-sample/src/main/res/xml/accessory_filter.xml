@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- RC331 USB device (Air 3S controller) -->
+    <usb-device vendor-id="0x2ca3" product-id="0x1021" />
+</resources>

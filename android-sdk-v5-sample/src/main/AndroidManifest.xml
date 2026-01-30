@@ -25,7 +25,7 @@
         android:required="false"/>
     <uses-feature
         android:name="android.hardware.usb.accessory"
-        android:required="true"/>
+        android:required="false"/>
 
     <application
         android:name="dji.sampleV5.aircraft.DJIAircraftApplication"
@@ -69,17 +69,28 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".UsbAttachActivity"
-            android:theme="@style/translucent_theme"
-            android:exported="true">
+        <activity
+            android:name=".UsbAttachActivity"
+            android:exported="true"
+            android:theme="@style/translucent_theme">
+
             <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
 
             <meta-data
-                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                 android:resource="@xml/accessory_filter" />
         </activity>
+
+
+        <receiver android:name=".UsbDebugReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+        </receiver>
+
 
         <activity android:name="dji.v5.ux.sample.showcase.defaultlayout.DefaultLayoutActivity"
             android:theme="@style/full_screen_theme"
