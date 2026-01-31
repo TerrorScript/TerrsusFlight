@@ -71,25 +71,25 @@
 
         <activity
             android:name=".UsbAttachActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/translucent_theme">
 
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />-->
+<!--            </intent-filter>-->
 
-            <meta-data
-                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-                android:resource="@xml/accessory_filter" />
+<!--            <meta-data-->
+<!--                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"-->
+<!--                android:resource="@xml/accessory_filter" />-->
         </activity>
 
 
-        <receiver android:name=".UsbDebugReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver android:name=".UsbDebugReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
 
 
         <activity android:name="dji.v5.ux.sample.showcase.defaultlayout.DefaultLayoutActivity"

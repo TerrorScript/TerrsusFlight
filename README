@@ -32,3 +32,44 @@ How to Build
 
 License
 This project is released under the MIT License. See the LICENSE file for details.
+
+Interesting app information
+Execution order:
+1. Zygote forks your process
+Native libs begin loading.
+
+2. Application.attachBaseContext()
+This is where DJI’s CLX module hooks in.
+This is where your crash was happening earlier.
+
+3. Application.onCreate()
+DJI SDK initialization begins here.
+
+4. Activity lifecycle starts
+DJIAircraftMainActivity.onCreate()
+
+onStart()
+
+onResume()
+
+5. ViewModels initialize
+BaseMainActivityVm
+
+MSDKInfoVm
+
+MSDKManagerVM
+
+6. DJI SDK background threads start
+Registration
+
+Product detection
+
+USB monitoring
+
+Link monitoring
+
+7. USB broadcast receivers register
+Your usbReceiver is here.
+
+8. USB attach events fire
+If a DJI controller is connected.

@@ -45,7 +45,7 @@ public class UsbAttachActivity extends AppCompatActivity {
         if (device != null && manager != null) {
             // Register receiver for permission result
             IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
-            registerReceiver(usbPermissionReceiver, filter);
+            registerReceiver(usbPermissionReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
 
             // Request permission
             PendingIntent permissionIntent = PendingIntent.getBroadcast(
