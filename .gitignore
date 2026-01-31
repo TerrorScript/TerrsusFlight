@@ -13,9 +13,16 @@ build/
 # Local config
 local.properties
 
+# Keystores
+*.jks
+*.keystore
+
 # Logs
 *.log
 
 # OS files
 .DS_Store
 Thumbs.db
+
+/captures/
+/outputs/

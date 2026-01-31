@@ -1,0 +1,34 @@
+Air 3S Android SDK App
+This project is an Android application built to communicate with the DJI Air 3S drone using the DJI Mobile SDK v5.The goal is to establish a reliable connection to the RC331 remote controller, display the live video feed, and eventually send basic flight commands.
+
+The app includes:
+- USB accessory detection for the RC331
+- Permission handling for USB communication
+- DJI SDK initialization after permission is granted
+- A clean activity structure for future expansion
+- A foundation for adding video decoding and control APIs
+
+This project is a personal learning effort and a way to explore drone development while flying with my father.
+
+Features (current state)
+- Detects and connects to the RC331 controller
+- Initializes the DJI SDK correctly
+- Loads the main activity after registration
+- Ready for adding video feed and control logic
+
+Planned
+- Display the live camera feed
+- Implement basic flight commands
+- Improve UI and connection status handling
+
+How to Build
+1. Install Android Studio.
+2. Clone the repository:
+  - git clone https://github.com/<yourname>/air3s-android-sdk-app.git
+3. Open the project in Android Studio.
+4. Let Gradle sync.
+5. Connect an Android device with USB host support.
+6. Build and run the app.
+
+License
+This project is released under the MIT License. See the LICENSE file for details.
